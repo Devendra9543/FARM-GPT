@@ -1,0 +1,114 @@
+/* ========== CSS Variables for Theme ========== */
+:root {
+  --primary-color:  #2e7d32;
+  --accent-color: #f0a500;
+  --bg-color: #f5fff8;
+  --text-color: #222;
+  --white: #fff;
+  --section-bg: #eafaf0;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f0fff4;
+  color: #1b5e20;
+}
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background: url("Logo.png") no-repeat center/cover;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.nav-items {
+  display: flex;
+  gap: 15px;
+}
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 300;  
+  position: relative;
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.contact-info h1 {
+  color: #1b5e20;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #a5d6a7;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+button {
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #2e7d32;
+}
+
+footer {
+  background-color: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}

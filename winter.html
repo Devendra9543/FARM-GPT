@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Winter Crops - FARM-GPT</title>
+  <link rel="stylesheet" href="winter.css" />
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <section class="top">
+    <h1>Winter Season Crops</h1>
+  </section>
+
+  <div class="separator"></div>
+
+  <main class="container">
+    <div class="inner">
+      <!-- Crop Cards -->
+      <div class="crop-card">
+        <img src="wheat.jpg" alt="Wheat">
+        <h3>Wheat</h3>
+        <a href="crop9.html">See More...</a>
+      </div>
+      <div class="crop-card">
+        <img src="garlic (1).jpg" alt="Garlic">
+        <h3>Garlic</h3>
+        <a href="crop10.html">See More...</a>
+      </div>
+      <div class="crop-card">
+        <img src="onion.jpg" alt="Onions">
+        <h3>Onions</h3>
+        <a href="crop11.html">See More...</a>
+      </div>
+      <div class="crop-card">
+        <img src="carrot.jpg" alt="Carrots">
+        <h3>Carrots</h3>
+        <a href="crop12.html">See More...</a>
+      </div>
+    </div>
+  </main>
+  <script>
+   fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Optionally mark current page active
+      const links = document.querySelectorAll(".nav-link");
+      links.forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    });
+</script>
+</body>
+</html>

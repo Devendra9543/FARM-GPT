@@ -1,0 +1,135 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f9f0;
+  color: #1a1a1a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Top Section */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #e1f5dc; /* Light green background */
+  border-bottom: 2px solid #b6e2a1;
+}
+
+/* Image Card */
+.upperbox {
+  width: 320px;
+  height: 325px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.crop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Text Card */
+.upper-content {
+  width: 600px;
+  height: 325px;
+  background-color: #c9f7c2; /* Soft green block */
+  color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Inner Content Grid */
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f6fff3; /* Light greenish background */
+}
+
+/* Crop Cards */
+.box1 {
+  width: 450px;
+  height: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.box1:hover {
+  transform: translateY(-8px);
+}
+
+/* Crop Image */
+.image {
+  width: 90%;
+  height: 250px;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Crop Message */
+.message {
+  margin-top: 1rem;
+  font-size: 20px;
+  width: 90%;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.message h3 {
+  margin: 0.5rem 0;
+}
+
+.message a {
+  font-size: 18px;
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.message a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .upper-content,
+  .upperbox,
+  .box1 {
+    width: 90%;
+  }
+}

@@ -1,0 +1,133 @@
+:root {
+  --primary-color: #1e7c4c;
+  --accent-color: #f0a500;
+  --bg-color: #f5fff8;
+  --font: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background-color: var(--bg-color);
+  background-image: url(plant_image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.login-box h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.2s;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Password Toggle */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  margin-bottom: 0;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  color: #555;
+}
+
+/* Button */
+button {
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Register Link */
+.register-link {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+    margin: 20px;
+  }
+}

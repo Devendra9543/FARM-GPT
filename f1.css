@@ -1,0 +1,150 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f9f1;
+  color: #1d1d1d;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: #444;
+  cursor: pointer;
+}
+
+/* Main Layout */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #e6f4ea;
+}
+
+/* Card / Box */
+.upperbox,
+.upper-content {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.upperbox {
+  width: 300px;
+  height: 325px;
+  background-color: #ffffff;
+}
+
+.upper-content {
+  width: 600px;
+  height: 325px;
+  background-color: #cde8cd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  color: #1d1d1d;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Button */
+.buynow {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.input_button {
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input_button:hover {
+  background-color: #388e3c;
+}
+
+/* Info Section */
+.info {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.inner_info {
+  background-color: #a4d7a4;
+  width: 98%;
+  max-width: 1200px;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.inner_info p {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .upper-content,
+  .upperbox {
+    width: 90%;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}

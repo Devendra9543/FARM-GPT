@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Farm GPT</title>
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Create Account</h1>
+      <p>Use <strong>Farm GPT</strong> to explore smart farming solutions.</p>
+
+      <form id="registerForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Create password" required />
+          <span class="toggle-password" onclick="togglePassword('password', this)">👁️</span>
+        </div>
+
+        <label for="confirm" style="margin-top: 20px;">Confirm Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="confirm" placeholder="Confirm password" required />
+          <span class="toggle-password" onclick="togglePassword('confirm', this)">👁️</span>
+        </div>
+
+        <p id="matchMessage" class="match-message"></p>
+
+        <button type="submit">Register</button>
+
+        <p class="register-link">Already have an account? <a href="log_page.html">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(fieldId, el) {
+      const input = document.getElementById(fieldId);
+      input.type = input.type === "password" ? "text" : "password";
+      el.textContent = input.type === "password" ? "👁️" : "🙈";
+    }
+
+    const form = document.getElementById("registerForm");
+    const password = document.getElementById("password");
+    const confirm = document.getElementById("confirm");
+    const message = document.getElementById("matchMessage");
+
+    confirm.addEventListener("input", () => {
+      if (password.value !== confirm.value) {
+        message.textContent = "❌ Passwords do not match";
+        message.style.color = "red";
+      } else {
+        message.textContent = "✅ Passwords match";
+        message.style.color = "green";
+      }
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const pass = password.value.trim();
+      const conf = confirm.value.trim();
+
+      if (pass !== conf) {
+        alert("❌ Passwords do not match.");
+        return;
+      }
+
+      // Save data to localStorage
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", pass);
+
+      alert("✅ Registered successfully!");
+      window.location.href = "log_page.html";
+    });
+  </script>
+</body>
+</html>

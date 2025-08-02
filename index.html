@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farm-GPT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Hero Video Section -->
+  <section class="hero-section">
+    <video class="video" src="subtitle_farm.mp4" autoplay muted loop playsinline></video>
+  </section>
+
+  <!-- Seasonal Crop Cards -->
+  <main class="inner-section">
+    <div class="box">
+      <div class="box-content">
+        <div class="box-img summer" role="img" aria-label="Summer Season Image"></div>
+        <div class="message">
+          <h1>Season: Summer</h1>
+          <h2>Crops</h2>
+          <a href="summer.html" class="see-more">See More...</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-content">
+        <div class="box-img rainy" role="img" aria-label="Rainy Season Image"></div>
+        <div class="message">
+          <h1>Season: Rainy</h1>
+          <h2>Crops</h2>
+          <a href="rainy.html" class="see-more">See More...</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-content">
+        <div class="box-img winter" role="img" aria-label="Winter Season Image"></div>
+        <div class="message">
+          <h1>Season: Winter</h1>
+          <h2>Crops</h2>
+          <a href="winter.html" class="see-more">See More...</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- About Section -->
+  <hr class="divider" />
+  <section class="about">
+    <p>Welcome! We built this website to provide reliable information about fertilizers.</p>
+    <p>It also helps you explore and purchase the right fertilizers.</p>
+    <p>Our goal is to support farmers with accurate and helpful insights on all fertilizer types.</p>
+  </section>
+  <hr class="divider" />
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2023-24 Farm-GPT. All rights reserved.</p>
+  </footer>
+
+  <script>
+// Load navbar dynamically
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Optionally mark current page active
+      const links = document.querySelectorAll(".nav-link");
+      links.forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    });
+  // Get elements
+  const navBox = document.querySelector(".second-box");
+
+  // Fetch name from localStorage
+  const username = localStorage.getItem("name");
+
+  if (username) {
+    // Add welcome message
+    const welcomeMsg = document.createElement("div");
+    welcomeMsg.className = "nav-item";
+    welcomeMsg.style.color = "white";
+    welcomeMsg.innerHTML = `👋 Welcome, <strong>${username}</strong>`;
+    navBox.prepend(welcomeMsg);
+
+    // Add Logout button
+    const logoutBtn = document.createElement("div");
+    logoutBtn.className = "nav-item border";
+    logoutBtn.innerHTML = `<a href="#" class="nav-link">LOGOUT</a>`;
+    logoutBtn.addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "log_page.html";
+    });
+
+    navBox.appendChild(logoutBtn);
+  } else {
+    // Not logged in, redirect to login
+    window.location.href = "log_page.html";
+  }
+
+</script>
+
+</body>
+</html>

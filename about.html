@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Farm GPT</title>
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+<div id="navbar"></div>
+
+  <main class="about-container">
+    <section class="intro">
+      <h1>About Farm GPT 🌱</h1>
+      <p>
+        Farm GPT is a smart agricultural platform designed to support farmers and agri-enthusiasts with seasonal crop guidance, fertilizer information, and AI-based recommendations.
+      </p>
+    </section>
+
+    <section class="features">
+      <h2>Why Farm GPT?</h2>
+      <ul>
+        <li>📋 Seasonal crop suggestions based on weather and region.</li>
+        <li>🧪 Fertilizer info tailored for specific crops and soil types.</li>
+        <li>💡 Simple and intuitive UI for all users.</li>
+        <li>🧠 AI/ML-powered insights (future upgrade).</li>
+      </ul>
+    </section>
+
+    <section class="team">
+      <h2>Our Mission 🌾</h2>
+      <p>
+        To empower Indian farmers and agri-students with digital tools and insights that improve productivity, sustainability, and profitability.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023-24 Farm GPT. Built with Team DYSP for smart farming.</p>
+  </footer>
+  <script>
+      fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Optionally mark current page active
+      const links = document.querySelectorAll(".nav-link");
+      links.forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
